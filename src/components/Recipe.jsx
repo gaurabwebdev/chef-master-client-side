@@ -1,4 +1,6 @@
+import { StarIcon } from "@heroicons/react/24/solid";
 import React from "react";
+import Rating from "react-rating";
 
 const Recipe = ({ recipe }) => {
   const { name, ingredients, method, rating } = recipe;
@@ -26,7 +28,15 @@ const Recipe = ({ recipe }) => {
           <h4 className="text-l font-light">Steps:</h4>
           <p>{method ? method : ""}</p>
         </div>
-        <div className="">ratings</div>
+        <div className="">
+          <Rating
+            readonly
+            placeholderRating={rating}
+            emptySymbol={<StarIcon className="w-6 h-6 text-orange-300" />}
+            placeholderSymbol={<StarIcon className="w-6 h-6 text-orange-300" />}
+            fullSymbol={<StarIcon className="w-6 h-6 text-orange-300" />}
+          />
+        </div>
       </div>
     </div>
   );
