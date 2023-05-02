@@ -18,6 +18,16 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [chefInfo, setChefInfo] = useState([]);
+  useEffect(() => {
+    const loadChefs = async () => {
+      const chefsData = await fetch(`http://localhost:4000/chefs`);
+
+      const chefs = await chefsData.json();
+      setChefInfo(chefs);
+    };
+    loadChefs();
+  }, []);
   useEffect(() => {
     const observer = onAuthStateChanged(auth, (loggedUser) => {
       setLoading(false);
@@ -68,6 +78,7 @@ const AuthProvider = ({ children }) => {
     login,
     googleLogin,
     logout,
+    chefInfo,
   };
 
   return (
