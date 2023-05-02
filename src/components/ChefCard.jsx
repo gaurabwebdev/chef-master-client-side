@@ -23,8 +23,25 @@ const ChefCard = ({ chef }) => {
       <div className="card-body items-center text-center">
         <h2 className="card-title">{chef_name}</h2>
         <div className="">
-          <p>Total Recipes: {number_of_rcipes}</p>
-          <p>Experience: {years_of_experience} years</p>
+          <div className="stat">
+            <div className="stat-value text-primary text-xl">
+              {total_likes} Likes
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col md:flex-row items-center">
+          <div className="stat">
+            <div className="stat-value text-primary text-xl">
+              {years_of_experience} Years
+            </div>
+            <p className="text-xl">of Experience</p>
+          </div>
+          <div className="stat">
+            <div className="stat-value text-primary text-xl">
+              {number_of_rcipes} Recipes
+            </div>
+            <p className="text-xl"> waiting for you</p>
+          </div>
         </div>
         <div className="card-actions">
           <Link to={`/chefs/${id}`}>
