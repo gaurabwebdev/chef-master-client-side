@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { PhoneIcon } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Header = () => {
+  const { user, logout } = useContext(AuthContext);
+  const handleLogout = () => {
+    logout()
+      .then((result) => {})
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <div>
       {/* TOP bar starts */}
@@ -13,13 +22,23 @@ const Header = () => {
             Call: <span>+91 8884 5556</span>
           </p>
         </div>
-        <div>
-          <Link className="pe-3  border-e-2" to={"/register"}>
-            Register
-          </Link>
-          <Link className="ps-3" to={"/login"}>
-            Sign In
-          </Link>
+        <div className="flex">
+          {user ? (
+            <p>{user.email}</p>
+          ) : (
+            <Link className="pe-3  border-e-2" to={"/register"}>
+              Register
+            </Link>
+          )}
+          {user ? (
+            <Link onClick={handleLogout} className="ps-3" to={"/"}>
+              Sign Out
+            </Link>
+          ) : (
+            <Link className="ps-3" to={"/login"}>
+              Sign In
+            </Link>
+          )}
         </div>
       </div>
       {/* Top Bar Ends */}
