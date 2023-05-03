@@ -13,19 +13,19 @@ const Footer = () => {
       </div>
       <div className="flex justify-end items-center gap-3">
         <p className="text-xl me-2">Find Us On: </p>
-        <span>
+        <span className="cursor-pointer">
           <img
             src="https://img.icons8.com/color/48/null/facebook-new.png"
             alt="facebook"
           />
         </span>
-        <span>
+        <span className="cursor-pointer">
           <img
             src="https://img.icons8.com/fluency/48/null/youtube-play.png"
             alt="youtube"
           />
         </span>
-        <span>
+        <span className="cursor-pointer">
           <img
             src="https://img.icons8.com/color/48/null/instagram-new--v1.png"
             alt="instagram"
