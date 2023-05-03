@@ -1,9 +1,37 @@
 import React from "react";
+import { PhoneIcon } from "@heroicons/react/24/solid";
 
 const Footer = () => {
   return (
-    <div>
-      <p>Footer</p>
+    <div className="w-full bg-amber-700 py-4 px-8 text-gray-200 flex justify-between items-center mt-8">
+      <div className="flex items-center gap-2">
+        <p className="text-2xl">© 2023</p>
+        <div>
+          <span className="text-3xl">c</span>hef_
+          <span className="text-3xl">m</span>aster
+        </div>
+      </div>
+      <div className="flex justify-end items-center gap-3">
+        <p className="text-xl me-2">Find Us On: </p>
+        <span>
+          <img
+            src="https://img.icons8.com/color/48/null/facebook-new.png"
+            alt="facebook"
+          />
+        </span>
+        <span>
+          <img
+            src="https://img.icons8.com/fluency/48/null/youtube-play.png"
+            alt="youtube"
+          />
+        </span>
+        <span>
+          <img
+            src="https://img.icons8.com/color/48/null/instagram-new--v1.png"
+            alt="instagram"
+          />
+        </span>
+      </div>
     </div>
   );
 };

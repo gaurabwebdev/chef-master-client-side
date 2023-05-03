@@ -2,6 +2,7 @@ import React from "react";
 import ChefSection from "./ChefSection";
 import HeroSlider from "../Carousel/HeroSlider";
 import PartnersSection from "./PartnersSection";
+import Social from "./Social";
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <HeroSlider />
       <ChefSection />
       <PartnersSection />
+      <Social />
     </div>
   );
 };
