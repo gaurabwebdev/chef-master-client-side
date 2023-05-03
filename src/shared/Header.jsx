@@ -57,7 +57,7 @@ const Header = () => {
       {/* Top Bar Ends */}
 
       {/* Header Starts */}
-      <div className="w-full bg-stone-300 py-4 px-8 text-gray-700 flex justify-between items-center">
+      <div className="w-full bg-stone-300 py-4 px-8 text-gray-700 flex flex-col md:flex-row gap-5 md:gap-0 justify-between items-center">
         <div>
           <Link to={"/"} className="flex items-center">
             <img

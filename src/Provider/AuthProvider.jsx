@@ -25,7 +25,6 @@ const AuthProvider = ({ children }) => {
       const chefsData = await fetch(`http://localhost:4000/chefs`);
 
       const chefs = await chefsData.json();
-
       setChefInfo(chefs);
       setLoading(false);
     };
