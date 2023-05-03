@@ -6,7 +6,7 @@ const Social = () => {
       <h2 className="text-3xl font-semibold text-center my-5">
         Explore Your Recipe
       </h2>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-3 mt-16">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-3 my-16">
         <div className="m-auto">
           <iframe
             width="375"

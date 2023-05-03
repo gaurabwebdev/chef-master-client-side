@@ -7,7 +7,9 @@ const RegisterLayout = () => {
   return (
     <>
       <Header />
-      <Outlet />
+      <div className="min-h-[calc(100vh-232px)]">
+        <Outlet />
+      </div>
       <Footer />
     </>
   );

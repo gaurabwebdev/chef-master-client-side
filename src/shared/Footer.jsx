@@ -3,7 +3,7 @@ import { PhoneIcon } from "@heroicons/react/24/solid";
 
 const Footer = () => {
   return (
-    <div className="w-full bg-amber-700 py-4 px-8 text-gray-200 flex justify-between items-center mt-8">
+    <div className="w-full bg-amber-700 py-4 px-8 text-gray-200 flex flex-col gap-3 md:gap-0 md:flex-row  justify-between items-center mt-8">
       <div className="flex items-center gap-2">
         <p className="text-2xl">© 2023</p>
         <div>
