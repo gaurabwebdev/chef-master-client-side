@@ -2,11 +2,13 @@ import React, { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import ChefCard from "./ChefCard";
 
+
+
 const ChefSection = () => {
   const { chefInfo } = useContext(AuthContext);
   console.log(chefInfo);
   return (
-    <div>
+    <div className="py-4">
       <h2 className="text-3xl font-semibold text-center my-5">
         Our Beloved Chefs
       </h2>
@@ -16,6 +18,8 @@ const ChefSection = () => {
             <ChefCard key={chef.id} chef={chef}></ChefCard>
           ))}
       </div>
+
+      
     </div>
   );
 };
