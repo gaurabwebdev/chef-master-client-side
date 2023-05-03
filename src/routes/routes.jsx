@@ -9,6 +9,7 @@ import Register from "../components/Register";
 import LoginLayout from "../Layouts/LoginLayout";
 import RegisterLayout from "../Layouts/RegisterLayout";
 import ChefDetails from "../components/ChefDetails";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/chefs/:id",
-        element: <ChefDetails />,
+        element: (
+          <PrivateRoutes>
+            <ChefDetails />
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/blog",

@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import {
+  GithubAuthProvider,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
@@ -24,14 +25,16 @@ const AuthProvider = ({ children }) => {
       const chefsData = await fetch(`http://localhost:4000/chefs`);
 
       const chefs = await chefsData.json();
+
       setChefInfo(chefs);
+      setLoading(false);
     };
     loadChefs();
   }, []);
   useEffect(() => {
     const observer = onAuthStateChanged(auth, (loggedUser) => {
-      setLoading(false);
       setUser(loggedUser);
+      setLoading(false);
       console.log(loggedUser);
     });
     return () => {
@@ -68,7 +71,14 @@ const AuthProvider = ({ children }) => {
 
   const googleProvider = new GoogleAuthProvider();
   const googleLogin = () => {
+    setLoading(true);
     return signInWithPopup(auth, googleProvider);
+  };
+
+  const gitHubProvider = new GithubAuthProvider();
+  const gitHubLogin = () => {
+    setLoading(true);
+    return signInWithPopup(auth, gitHubProvider);
   };
   const authInfo = {
     createUser,
@@ -79,6 +89,8 @@ const AuthProvider = ({ children }) => {
     googleLogin,
     logout,
     chefInfo,
+    loading,
+    gitHubLogin,
   };
 
   return (

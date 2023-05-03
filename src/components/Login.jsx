@@ -1,10 +1,15 @@
 import React from "react";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Login = () => {
-  const { login, googleLogin } = useContext(AuthContext);
+  const { login, googleLogin, gitHubLogin } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
+  const targetLocation = location.state?.from?.pathname || "/";
+  console.log(targetLocation);
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -13,6 +18,7 @@ const Login = () => {
     login(email, password)
       .then((result) => {
         console.log(result.user);
+        navigate(targetLocation);
       })
       .catch((error) => {
         console.log(error.message);
@@ -23,6 +29,16 @@ const Login = () => {
       .then((result) => {
         const loggedInUser = result.user;
         console.log(loggedInUser);
+        navigate(targetLocation);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+  const handleGithubLogin = () => {
+    gitHubLogin()
+      .then((result) => {
+        console.log(result.user);
       })
       .catch((error) => {
         console.log(error.message);
@@ -63,7 +79,10 @@ const Login = () => {
             <div className="flex gap-5 items-center border-dotted border-2 border-sky-500 mb-4 px-12 py-2 rounded-full">
               <Link to={"/register"}>Create An Account</Link>
             </div>
-            <div className="flex gap-5 items-center border-dotted border-2 border-sky-500 mb-4 px-12 py-1 rounded-full cursor-pointer">
+            <div
+              onClick={handleGoogleLogin}
+              className="flex gap-5 items-center border-dotted border-2 border-sky-500 mb-4 px-12 py-1 rounded-full cursor-pointer"
+            >
               <p>Continue With</p>
               <img
                 src="https://img.icons8.com/color/48/null/google-logo.png"
@@ -73,7 +92,7 @@ const Login = () => {
             </div>
             <div>
               <div
-                onClick={handleGoogleLogin}
+                onClick={handleGithubLogin}
                 className="flex items-center gap-5 border-dotted border-2 border-sky-500 mb-4 px-12 py-1 rounded-full cursor-pointer"
               >
                 <p>Continue With</p>

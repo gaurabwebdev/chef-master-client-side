@@ -13,9 +13,9 @@ const Social = () => {
             height="250"
             src="https://www.youtube.com/embed/0kxuFVG-Gh4"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
         <div className="m-auto">
@@ -24,9 +24,9 @@ const Social = () => {
             height="250"
             src="https://www.youtube.com/embed/rIjk-mPG4gg"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
         <div className="m-auto">
@@ -35,9 +35,9 @@ const Social = () => {
             height="250"
             src="https://www.youtube.com/embed/axon9qBTmXc"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
       </div>

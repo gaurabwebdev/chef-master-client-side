@@ -5,6 +5,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const Header = () => {
   const { user, logout } = useContext(AuthContext);
+  console.log(user);
   const handleLogout = () => {
     logout()
       .then((result) => {})
@@ -22,9 +23,21 @@ const Header = () => {
             Call: <span>+91 8884 5556</span>
           </p>
         </div>
-        <div className="flex">
+        <div className="flex items-center">
           {user ? (
-            <p>{user.email}</p>
+            user.photoURL ? (
+              <img
+                className="w-8 rounded-full"
+                src={user.photoURL}
+                alt="user-pic"
+              />
+            ) : (
+              <img
+                className="w-8 rounded-full"
+                src="https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
+                alt="user-pic"
+              />
+            )
           ) : (
             <Link className="pe-3  border-e-2" to={"/register"}>
               Register
@@ -46,7 +59,7 @@ const Header = () => {
       {/* Header Starts */}
       <div className="w-full bg-stone-300 py-4 px-8 text-gray-700 flex justify-between items-center">
         <div>
-          <Link className="flex items-center">
+          <Link to={"/"} className="flex items-center">
             <img
               className="w-16"
               src="https://img.icons8.com/plasticine/100/null/uber-eats.png"
