@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
   const { login, googleLogin, gitHubLogin } = useContext(AuthContext);
@@ -22,6 +23,9 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error.message);
+        if ((error.message = "(auth/wrong-password)")) {
+          toast("Wrong Email or Password. Please Try Again.");
+        }
       });
   };
   const handleGoogleLogin = () => {
@@ -39,6 +43,7 @@ const Login = () => {
     gitHubLogin()
       .then((result) => {
         console.log(result.user);
+        navigate(targetLocation);
       })
       .catch((error) => {
         console.log(error.message);
@@ -106,6 +111,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

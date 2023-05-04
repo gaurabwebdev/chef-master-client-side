@@ -19,6 +19,7 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [qna, setQna] = useState([]);
   const [chefInfo, setChefInfo] = useState([]);
   useEffect(() => {
     const loadChefs = async () => {
@@ -30,6 +31,15 @@ const AuthProvider = ({ children }) => {
     };
     loadChefs();
   }, []);
+
+  useEffect(() => {
+    const loadQna = async () => {
+      const loadedQna = await fetch("http://localhost:4000/qna");
+      const qna = await loadedQna.json();
+      setQna(qna);
+    };
+  }, []);
+
   useEffect(() => {
     const observer = onAuthStateChanged(auth, (loggedUser) => {
       setUser(loggedUser);
@@ -90,6 +100,7 @@ const AuthProvider = ({ children }) => {
     chefInfo,
     loading,
     gitHubLogin,
+    qna,
   };
 
   return (

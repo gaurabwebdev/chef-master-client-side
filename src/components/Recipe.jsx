@@ -28,7 +28,7 @@ const Recipe = ({ recipe }) => {
           <h4 className="text-l font-light">Steps:</h4>
           <p>{method ? method : ""}</p>
         </div>
-        <div className="">
+        <div className="flex items-center gap-3">
           <Rating
             readonly
             placeholderRating={rating}
@@ -36,6 +36,7 @@ const Recipe = ({ recipe }) => {
             placeholderSymbol={<StarIcon className="w-6 h-6 text-orange-300" />}
             fullSymbol={<StarIcon className="w-6 h-6 text-orange-300" />}
           />
+          <p className="inline">{rating ? rating : ""}</p>
         </div>
       </div>
     </div>
