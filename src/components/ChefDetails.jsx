@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Recipe from "./Recipe";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const ChefDetails = () => {
   const { chefInfo } = useContext(AuthContext);
@@ -21,8 +22,7 @@ const ChefDetails = () => {
     <div className="px-12 py-6">
       <div className="flex flex-col md:flex-row justify-evenly items-center gap-2 mt-10">
         <div className="rounded-lg p-3 border border-1">
-          <img
-            loading="lazy"
+          <LazyLoadImage
             className="rounded-lg"
             src={profile_image ? profile_image : ""}
             alt=""

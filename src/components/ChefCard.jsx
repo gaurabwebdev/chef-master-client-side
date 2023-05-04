@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const ChefCard = ({ chef }) => {
   const {
@@ -18,7 +19,7 @@ const ChefCard = ({ chef }) => {
   return (
     <div className="card  bg-base-100 shadow-xl relative">
       <figure className="px-10 pt-10">
-        <img
+        <LazyLoadImage
           loading="lazy"
           src={profile_image}
           alt="Shoes"

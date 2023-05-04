@@ -2,6 +2,7 @@ import { BookmarkIcon, StarIcon } from "@heroicons/react/24/solid";
 import React, { useState } from "react";
 import Rating from "react-rating";
 import { ToastContainer, toast } from "react-toastify";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Recipe = ({ recipe }) => {
   const [bookmark, setBookmark] = useState(true);
@@ -24,9 +25,8 @@ const Recipe = ({ recipe }) => {
         </button>
       )}
       <figure>
-        <img
-          loading="lazy"
-          className="h-full"
+        <LazyLoadImage
+          className="h-full rounded-t-lg md:rounded-l-lg"
           src="https://img.delicious.com.au/BeKyn8Dn/del/2022/10/p69-parmesan-crumbed-chicken-schnitzel-fried-eggs-and-apple-and-cabbage-slaw-176385-1.png"
           alt="Movie"
         />
