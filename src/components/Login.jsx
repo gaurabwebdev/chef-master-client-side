@@ -81,12 +81,12 @@ const Login = () => {
           </form>
 
           <div className="mt-5">
-            <div className="flex gap-5 items-center border-dotted border-2 border-sky-500 mb-4 px-12 py-2 rounded-full">
+            <div className="flex gap-5 items-center border-dotted border-2 border-sky-500 mb-4 px-4 md:px-12 py-2 rounded-full">
               <Link to={"/register"}>Create An Account</Link>
             </div>
             <div
               onClick={handleGoogleLogin}
-              className="flex gap-5 items-center border-dotted border-2 border-sky-500 mb-4 px-12 py-1 rounded-full cursor-pointer"
+              className="flex gap-5 items-center border-dotted border-2 border-sky-500 mb-4 px-4 md:px-12 py-1 rounded-full cursor-pointer"
             >
               <p>Continue With</p>
               <img
@@ -99,7 +99,7 @@ const Login = () => {
             <div>
               <div
                 onClick={handleGithubLogin}
-                className="flex items-center gap-5 border-dotted border-2 border-sky-500 mb-4 px-12 py-1 rounded-full cursor-pointer"
+                className="flex items-center gap-5 border-dotted border-2 border-sky-500 mb-4 px-4 md:px-12 py-1 rounded-full cursor-pointer"
               >
                 <p>Continue With</p>
                 <img

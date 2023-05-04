@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <div>
       {/* TOP bar starts */}
-      <div className="w-full bg-amber-700 py-4 px-8 text-gray-200 flex justify-between items-center">
+      <div className="w-full bg-amber-700 py-4 px-8 text-gray-200 flex flex-col md:flex-row gap-3 md:gap-0 justify-between items-center">
         <div className="flex gap-3">
           <PhoneIcon className="h-6 w-6 " />
           <p>
