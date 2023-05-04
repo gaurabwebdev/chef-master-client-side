@@ -23,7 +23,9 @@ const AuthProvider = ({ children }) => {
   const [chefInfo, setChefInfo] = useState([]);
   useEffect(() => {
     const loadChefs = async () => {
-      const chefsData = await fetch(`http://localhost:4000/chefs`);
+      const chefsData = await fetch(
+        `https://chef-recipe-hunter-server-gaurabwebdev.vercel.app/chefs`
+      );
 
       const chefs = await chefsData.json();
       setChefInfo(chefs);
@@ -33,7 +35,9 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const loadQna = async () => {
-      const loadedQna = await fetch("http://localhost:4000/qna");
+      const loadedQna = await fetch(
+        "https://chef-recipe-hunter-server-gaurabwebdev.vercel.app/qna"
+      );
       const qna = await loadedQna.json();
       setQna(qna.questions);
     };
