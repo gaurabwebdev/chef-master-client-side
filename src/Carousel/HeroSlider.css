@@ -5,5 +5,21 @@ span.swiper-pagination-bullet {
 }
 
 span.swiper-pagination-bullet-active {
-    background: #58b0e6ad;
+    background: #b55309;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    background: #b553098c;
+    width: 3rem;
+    padding: 1.5rem;
+    border-radius: 50%;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 1.5rem;
+    color: white;
 }
