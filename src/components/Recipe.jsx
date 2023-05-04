@@ -1,12 +1,28 @@
-import { StarIcon } from "@heroicons/react/24/solid";
-import React from "react";
+import { BookmarkIcon, StarIcon } from "@heroicons/react/24/solid";
+import React, { useState } from "react";
 import Rating from "react-rating";
+import { ToastContainer, toast } from "react-toastify";
 
 const Recipe = ({ recipe }) => {
+  const [bookmark, setBookmark] = useState(true);
+  if (!bookmark) {
+    toast("You added your favourite chef.");
+  }
   const { name, ingredients, method, rating } = recipe;
   console.log(recipe);
   return (
-    <div className="card card-side bg-base-100 shadow-xl mb-5">
+    <div className="card card-side bg-base-100 shadow-xl mb-5 flex flex-col md:flex-row">
+      <ToastContainer />
+      {bookmark ? (
+        <BookmarkIcon
+          onClick={() => setBookmark(false)}
+          className="h-8 w-8 text-amber-600 absolute top-2.5 right-1 cursor-pointer"
+        />
+      ) : (
+        <button disabled>
+          <BookmarkIcon className="h-8 w-8 text-gray-500 absolute top-2.5 right-1 cursor-pointer" />
+        </button>
+      )}
       <figure>
         <img
           loading="lazy"

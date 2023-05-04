@@ -1,20 +1,27 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
+import { ThreeDots } from "react-loader-spinner";
 
 const PrivateRoutes = ({ children }) => {
   const { loading, user } = useContext(AuthContext);
   const targetRoute = useLocation();
-  console.log(targetRoute);
+  console.log(user);
+  console.log(loading);
   if (loading) {
     return (
-      <button type="button" className="bg-indigo-500 ... mx-auto" disabled>
-        <svg
-          className="animate-spin h-5 w-5 mr-3 ..."
-          viewBox="0 0 24 24"
-        ></svg>
-        Processing...
-      </button>
+      <div className=" absolute  top-2/4 left-2/4">
+        <ThreeDots
+          height="80"
+          width="80"
+          radius="9"
+          color="#B55309"
+          ariaLabel="three-dots-loading"
+          wrapperStyle={{}}
+          wrapperClassName=""
+          visible={true}
+        />
+      </div>
     );
   }
   if (user) {

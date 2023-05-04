@@ -27,7 +27,6 @@ const AuthProvider = ({ children }) => {
 
       const chefs = await chefsData.json();
       setChefInfo(chefs);
-      setLoading(false);
     };
     loadChefs();
   }, []);

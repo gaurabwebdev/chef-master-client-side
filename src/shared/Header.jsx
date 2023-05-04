@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { PhoneIcon } from "@heroicons/react/24/solid";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Header = () => {
@@ -77,10 +77,20 @@ const Header = () => {
 
         <ul className="flex items-center gap-4 text-xl">
           <li className="ml-4">
-            <Link to={"/"}>Home</Link>
+            <NavLink
+              className={({ isActive }) => (isActive ? "text-amber-600" : "")}
+              to={"/"}
+            >
+              Home
+            </NavLink>
           </li>
           <li className="ml-4">
-            <Link to={"/blogs"}>Blogs</Link>
+            <NavLink
+              className={({ isActive }) => (isActive ? "text-amber-600" : "")}
+              to={"/blogs"}
+            >
+              Blogs
+            </NavLink>
           </li>
         </ul>
       </div>

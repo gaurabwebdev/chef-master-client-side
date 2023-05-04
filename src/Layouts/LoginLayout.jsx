@@ -7,7 +7,7 @@ const LoginLayout = () => {
   return (
     <>
       <Header />
-      <div className="min-h-[calc(100vh-232px)]">
+      <div className="min-h-[calc(100vh-232px)] relative">
         <Outlet />
       </div>
 

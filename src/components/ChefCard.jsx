@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { BookmarkIcon } from "@heroicons/react/24/solid";
-import { ToastContainer, toast } from "react-toastify";
 
 const ChefCard = ({ chef }) => {
   const {
@@ -19,18 +17,6 @@ const ChefCard = ({ chef }) => {
   //   console.log(chef);
   return (
     <div className="card  bg-base-100 shadow-xl relative">
-      <ToastContainer />
-      {bookmark ? (
-        <BookmarkIcon
-          onClick={() => setBookmark(false)}
-          className="h-8 w-8 text-amber-600 absolute top-2.5 right-1 cursor-pointer"
-        />
-      ) : (
-        <button disabled>
-          <BookmarkIcon className="h-8 w-8 text-gray-500 absolute top-2.5 right-1 cursor-pointer" />
-        </button>
-      )}
-
       <figure className="px-10 pt-10">
         <img
           loading="lazy"

@@ -19,7 +19,7 @@ const ChefDetails = () => {
   console.log(singleChef);
   return (
     <div className="px-12 py-6">
-      <div className="flex justify-evenly items-center gap-2 mt-10">
+      <div className="flex flex-col md:flex-row justify-evenly items-center gap-2 mt-10">
         <div className="rounded-lg p-3 border border-1">
           <img
             loading="lazy"
@@ -29,14 +29,14 @@ const ChefDetails = () => {
           />
         </div>
 
-        <div className="flex justify-center  items-end flex-col gap-5 text-end w-2/3 ">
+        <div className="flex justify-center items-start  md:items-end flex-col gap-5 text-start md:text-end w-2/3 ">
           {chef_name && <h2 className="card-title">{chef_name}</h2>}
           <p className="">{bio ? bio : ""}</p>
         </div>
         <div></div>
       </div>
-      <div className="flex py-3 px-5 gap-10">
-        <div>
+      <div className="flex flex-col lg:flex-row py-3 px-5 gap-10">
+        <div className="flex lg:flex-col">
           <div className="stat">
             <div className="stat-value text-primary text-xl">
               {total_likes} Likes
