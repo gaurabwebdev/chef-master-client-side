@@ -63,9 +63,8 @@ const Header = () => {
         <div>
           <Link to={"/"} className="flex items-center">
             <img
-              loading="lazy"
               className="w-16"
-              src="https://img.icons8.com/plasticine/100/null/uber-eats.png"
+              src="https://img.icons8.com/color-glass/100/null/salt-bae.png"
               alt=""
             />
             <p className="text-xl">
