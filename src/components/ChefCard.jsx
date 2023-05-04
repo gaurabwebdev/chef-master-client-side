@@ -35,7 +35,7 @@ const ChefCard = ({ chef }) => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row items-center">
+        <div className="flex flex-col lg:flex-row items-center">
           <div className="stat">
             <div className="stat-value text-primary text-xl">
               {years_of_experience} Years

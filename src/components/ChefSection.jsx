@@ -10,7 +10,7 @@ const ChefSection = () => {
       <h2 className="text-3xl font-semibold text-center my-5">
         Our Beloved Chefs
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 px-5 md:px-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 px-12 md:px-20">
         {chefInfo &&
           chefInfo.map((chef) => (
             <ChefCard key={chef.id} chef={chef}></ChefCard>
