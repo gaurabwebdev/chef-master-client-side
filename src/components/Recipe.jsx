@@ -9,6 +9,7 @@ const Recipe = ({ recipe }) => {
     <div className="card card-side bg-base-100 shadow-xl mb-5">
       <figure>
         <img
+          loading="lazy"
           className="h-full"
           src="https://img.delicious.com.au/BeKyn8Dn/del/2022/10/p69-parmesan-crumbed-chicken-schnitzel-fried-eggs-and-apple-and-cabbage-slaw-176385-1.png"
           alt="Movie"

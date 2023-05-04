@@ -33,6 +33,7 @@ const ChefCard = ({ chef }) => {
 
       <figure className="px-10 pt-10">
         <img
+          loading="lazy"
           src={profile_image}
           alt="Shoes"
           className="rounded-xl h-60 w-full"

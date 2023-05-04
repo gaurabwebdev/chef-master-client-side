@@ -22,6 +22,7 @@ const ChefDetails = () => {
       <div className="flex justify-evenly items-center gap-2 mt-10">
         <div className="rounded-lg p-3 border border-1">
           <img
+            loading="lazy"
             className="rounded-lg"
             src={profile_image ? profile_image : ""}
             alt=""

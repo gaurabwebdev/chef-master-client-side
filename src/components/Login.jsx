@@ -90,6 +90,7 @@ const Login = () => {
             >
               <p>Continue With</p>
               <img
+                loading="lazy"
                 src="https://img.icons8.com/color/48/null/google-logo.png"
                 alt="google-sign-in"
                 className="w-8"
@@ -102,6 +103,7 @@ const Login = () => {
               >
                 <p>Continue With</p>
                 <img
+                  loading="lazy"
                   src="https://img.icons8.com/3d-fluency/94/null/github.png"
                   alt="google-sign-in"
                   className="w-8"

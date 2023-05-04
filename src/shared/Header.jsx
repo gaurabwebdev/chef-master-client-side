@@ -27,12 +27,14 @@ const Header = () => {
           {user ? (
             user.photoURL ? (
               <img
+                loading="lazy"
                 className="w-8 rounded-full"
                 src={user.photoURL}
                 alt="user-pic"
               />
             ) : (
               <img
+                loading="lazy"
                 className="w-8 rounded-full"
                 src="https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
                 alt="user-pic"
@@ -61,6 +63,7 @@ const Header = () => {
         <div>
           <Link to={"/"} className="flex items-center">
             <img
+              loading="lazy"
               className="w-16"
               src="https://img.icons8.com/plasticine/100/null/uber-eats.png"
               alt=""

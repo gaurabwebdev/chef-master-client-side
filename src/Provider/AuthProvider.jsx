@@ -36,8 +36,9 @@ const AuthProvider = ({ children }) => {
     const loadQna = async () => {
       const loadedQna = await fetch("http://localhost:4000/qna");
       const qna = await loadedQna.json();
-      setQna(qna);
+      setQna(qna.questions);
     };
+    loadQna();
   }, []);
 
   useEffect(() => {
